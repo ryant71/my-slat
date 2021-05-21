@@ -1,0 +1,4 @@
+general:
+  '*':
+    - neovim
+    - pyenv

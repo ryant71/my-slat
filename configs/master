@@ -1,0 +1,12 @@
+timeout: 60
+renderer: jinja | yaml
+
+# environments
+pillar_roots:
+  general:
+    - /srv/general
+
+file_roots:
+  base:
+    - /srv/salt
+    - /srv/formulas/someformula

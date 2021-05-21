@@ -1,0 +1,3 @@
+{% import_yaml 'pyenv/defaults.yaml' as defaults %}
+
+{% set pyenv = salt['pillar.get']('pyenv', defaults=defaults.pyenv), merge=True %}
