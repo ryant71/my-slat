@@ -3,5 +3,8 @@
 
 configure_python_version:
   cmd.run:
-    - name: pyenv install {{ pyenv.python.version }}
+    - name: eval $(pyenv init --path) && eval $(pyenv init -) && pyenv install {{ pyenv.python.version }}
     - runas: {{ pyenv.user }}
+    - env:  
+      - PYENV_ROOT: "$HOME/.pyenv"
+      - PATH: "$PYENV_ROOT/bin:$PATH"

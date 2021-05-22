@@ -24,17 +24,17 @@ dependencies:
 
 git_directory:
   file.absent:
-    - name: /tmp/pyenv
+    - name: /home/{{ pyenv.user }}/.pyenv
 
 clone_pyenv_repo:
   cmd.run:
-    - name: git clone https://github.com/pyenv/pyenv.git /tmp/pyenv
+    - name: git clone https://github.com/pyenv/pyenv.git /home/{{ pyenv.user }}/.pyenv
     - runas: {{ pyenv.user }}
 
 install_pyenv:
   cmd.run:
     - name: src/configure && make -C src
-    - cwd: /tmp/pyenv
+    - cwd: /home/{{ pyenv.user }}/.pyenv
     - runas: {{ pyenv.user }}
 
 configure_shellrc:
