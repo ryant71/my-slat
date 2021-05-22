@@ -1,2 +1,4 @@
-install_pyenv.sls
-configure_python.sls
+# vim: sts=2 ts=2 sw=2 et ai
+include:
+  - pyenv.install_pyenv.sls
+  - pyenv.configure_python.sls
