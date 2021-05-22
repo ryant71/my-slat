@@ -6,5 +6,4 @@ configure_python_version:
     - name: eval $(pyenv init --path) && eval $(pyenv init -) && pyenv install {{ pyenv.python.version }}
     - runas: {{ pyenv.user }}
     - env:  
-      - PYENV_ROOT: "$HOME/.pyenv"
-      - PATH: "$PYENV_ROOT/bin:$PATH"
+      - PATH: {{ [current_path, '~/.pyenv/bin']|join(':') }}
