@@ -22,6 +22,10 @@ dependencies:
       - libffi-dev
       - liblzma-dev
 
+git_directory:
+  file.absent:
+    - name: /tmp/pyenv
+
 clone_pyenv_repo:
   cmd.run:
     - name: git clone https://github.com/pyenv/pyenv.git /tmp/pyenv
