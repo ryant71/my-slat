@@ -1,5 +1,6 @@
 # vim: sts=2 ts=2 sw=2 et ai
 {% from "pyenv/map.jinja" import pyenv with context %}
+{% set current_path = salt['environ.get']('PATH', '/bin:/usr/bin') %}
 
 configure_python_version:
   cmd.run:
