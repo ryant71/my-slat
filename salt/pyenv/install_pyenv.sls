@@ -1,6 +1,27 @@
 # vim: sts=2 ts=2 sw=2 et ai
 {% from "pyenv/map.jinja" import pyenv with context %}
 
+dependencies:
+  pkg.latest:
+    - pkgs:
+      - make
+      - build-essential
+      - libssl-dev
+      - zlib1g-dev
+      - libbz2-dev
+      - libreadline-dev
+      - libsqlite3-dev
+      - wget
+      - curl
+      - llvm
+      - libncursesw5-dev
+      - xz-utils
+      - tk-dev
+      - libxml2-dev
+      - libxmlsec1-dev
+      - libffi-dev
+      - liblzma-dev
+
 clone_pyenv_repo:
   cmd.run:
     - name: git clone https://github.com/pyenv/pyenv.git /tmp/pyenv
