@@ -3,6 +3,6 @@
 
 configure_python_version:
   cmd.run:
-    - name: source {{ pyenv.zshrc }} && pyenv install {{ pyenv.python.version }}
+    - name: source {{ pyenv.shellrc }} && pyenv install {{ pyenv.python.version }}
     - runas: {{ pyenv.user }}
     - cwd: /home/{{ pyenv.user }}
