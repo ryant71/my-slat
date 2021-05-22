@@ -6,3 +6,4 @@ configure_python_version:
     - name: source {{ pyenv.shellrc }} && pyenv install {{ pyenv.python.version }}
     - runas: {{ pyenv.user }}
     - cwd: /home/{{ pyenv.user }}
+    - shell: {{ pyenv.shell }}
