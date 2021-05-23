@@ -7,3 +7,9 @@ configure_python_version:
     - runas: {{ pyenv.user }}
     - cwd: /home/{{ pyenv.user }}
     - shell: {{ pyenv.shell }}
+
+select_python_version:
+    - name: source {{ pyenv.shellrc }} && pyenv global {{ pyenv.python.version }}
+    - runas: {{ pyenv.user }}
+    - cwd: /home/{{ pyenv.user }}
+    - shell: {{ pyenv.shell }}
