@@ -4,6 +4,10 @@
 zsh:
   pkg.latest
 
+user_present:
+  user.present:
+    - name: {{ pyenv.user }}
+
 make_zsh_default:
   cmd.run:
     - name: chsh -s /bin/zsh {{ pyenv.user }}
